@@ -39,8 +39,15 @@ for file in filetxt:
             bestpixel=-999.99
             temp[0]=-999.99   
     else:
-        searchfreq=np.where(freq==max(freq))
-        bestpixel=pixels[searchfreq]       
+        #Search the coldest object and if it is not found we store data associated to the background
+        searchfreq=np.where((freq>1000) & (pixels<-600.0))
+        if(any(map(len,searchfreq))):
+            desfreq=max(freq[searchfreq])
+            searchpixel=np.where(freq==desfreq)
+            bestpixel=pixels[searchpixel]
+        else:
+            searchfreq=np.where(freq==max(freq))
+            bestpixel=pixels[searchfreq]       
     #In order to see the histograms
     #pl.hist(dataraw,bins=50)
     #pl.title('Histogram of '+str(file))
