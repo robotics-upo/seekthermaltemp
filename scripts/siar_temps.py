@@ -27,7 +27,7 @@ class Node(object):
         rospy.Subscriber("thermal_camera/thermal_image_raw/",ThermalImage,self.calibrate)
 
         #Ros params
-        rospy.set_param('~path','/home/sergiod/catkin_ws/src/firetemp/tempsiar/regresion.yaml')
+        rospy.set_param('~path','/home/sergiod/catkin_ws/src/firetemp/scripts/regresion.yaml')
 
 
     #Obtain the parameters from the regresion yaml file and use it on the data
