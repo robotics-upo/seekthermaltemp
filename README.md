@@ -1,7 +1,7 @@
 # seekthermaltemp
 ROSPY node to obtain temperatures from raw data's Seek Thermal Compact
 
-Dependencies: rospy,std_msgs, and python-numpy.
+Dependencies: rospy,std_msgs, and rospy_tutorials
 
 This node lets you know the temperature, in Celsius degrees, that the camera detects. It suscribes to thermal_camera/thermal_image_raw, converts the raw data into temperature by loading the parameters from the yaml file and we publish the matrix on the Temperature topic. The script siar_temps.py does that.
 
