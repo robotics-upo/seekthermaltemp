@@ -14,9 +14,9 @@ The statistics.py:
    5) Makes linear regression. 
    6) Save the parameters to the yaml file.
    
-We also upload the txt folder. It contains the images and text files we obtained and/or used to achieve the parameters in the yaml file.  
+We also include a txt folder. It contains the images and text files we used to achieve the parameters in the yaml file.  
 
-In order to subscribe to the topic, you need to install ROS SeekThermal node and their libraries:   
+In order to subscribe to the topic, you need to install ROS SeekThermal node and its library:   
 https://github.com/ethz-asl/seekthermal_ros
 
 Note: If you want to do calibrations with your own camera, you should change the private ROS parameter path to the path that you are interested in.
