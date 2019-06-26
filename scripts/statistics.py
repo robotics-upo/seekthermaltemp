@@ -5,6 +5,9 @@ import numpy as np
 import matplotlib.pylab as pl
 import yaml
 
+#rospkg for getting path
+import rospkg
+
 # Search the first number which is not zero on a decimal number
 def contador(x,a):
     if(x<2.5):
@@ -12,8 +15,14 @@ def contador(x,a):
     else:
         return a
 
+#get package path 
+rospack = rospkg.RosPack()
+#rospack.list()
+pkg_path = rospack.get_path('seekthermaltemp')
+path = pkg_path + '/txt'
+
 #1) Search for txt in specific folder 
-path='/home/sergiod/catkin_ws/src/firetemp/txt'
+#path='/home/sergiod/catkin_ws/src/firetemp/txt'
 filelist=os.listdir(path)
 filetxt=[]
 filesnumber=0

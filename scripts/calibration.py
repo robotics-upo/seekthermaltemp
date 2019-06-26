@@ -5,6 +5,9 @@ import rospy
 import numpy as np
 import matplotlib.pylab as pl
 
+#rospkg for getting path
+import rospkg
+
 #Import all the messages included in ThermalImage
 from seekthermal_ros.msg import ThermalImage
 #Needed to do operations on images and data
@@ -21,8 +24,16 @@ from cv_bridge import CvBridge
 import os
 
 def processimage(msg):
+
+    #get package path 
+    rospack = rospkg.RosPack()
+    #rospack.list()
+    pkg_path = rospack.get_path('seekthermaltemp')
+    txt_path = pkg_path + '/txt'
+
     #Default common parameters
-    rospy.set_param('~path','/home/sergiod/catkin_ws/src/firetemp/txt')    
+    #rospy.set_param('~path','/home/sergiod/catkin_ws/src/firetemp/txt')    
+    rospy.set_param('~path', txt_path)
     rospy.set_param('~save',1)
     rospy.set_param('~threshval',80)
     
