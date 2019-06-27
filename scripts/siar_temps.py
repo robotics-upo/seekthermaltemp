@@ -25,7 +25,7 @@ class Node(object):
         rospack = rospkg.RosPack()
         #rospack.list()
         pkg_path = rospack.get_path('seekthermaltemp')
-        yaml_path = pkg_path + 'scripts/regresion.yaml'
+        yaml_path = pkg_path + '/scripts/regresion.yaml'
 
         #Frecuency of publications
         self.loop_rate=rospy.Rate(10)
@@ -37,8 +37,8 @@ class Node(object):
         rospy.Subscriber("thermal_camera/thermal_image_raw/",ThermalImage,self.calibrate)
 
         #Ros params
-        #rospy.set_param('~path','/home/sergiod/catkin_ws/src/firetemp/scripts/regresion.yaml')
-	rospy.set_param('~path', yaml_path)
+        rospy.set_param('~path','/home/domi/siar_ws/src/seekthermaltemp/scripts/regresion.yaml')
+	#rospy.set_param('~path', yaml_path)
 
 
     #Obtain the parameters from the regresion yaml file and use it on the data
